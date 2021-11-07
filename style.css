@@ -1,0 +1,831 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+/* font-family: 'Cookie', cursive; */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap");
+/* font-family: 'Cinzel Decorative', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+/* font-family: 'Great Vibes', cursive; */
+/* for sub headings */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+/* font-family: 'Pacifico', cursive; */
+/* for input boxes */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+/* font-family: 'Dancing Script', cursive; */
+/* for heading */
+@import url("https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap");
+/* font-family: 'Emilys Candy', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Elsie&display=swap");
+/* font-family: 'Elsie', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+/* font-family: 'Rye', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+/* font-family: 'Cinzel', serif; */
+@import url("https://fonts.googleapis.com/css2?family=Nixie+One&display=swap");
+/* font-family: 'Nixie One', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Flamenco&display=swap");
+/* font-family: 'Flamenco', cursive; */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --map-text-color: rgb(92, 0, 0);
+}
+h1 {
+  font-family: "Cinzel", serif;
+  text-align: center;
+  color: #fff;
+}
+/* styling for audio button */
+#player-container #play-pause {
+  cursor: pointer;
+  text-indent: -999999px;
+  height: 60px;
+  width: 60px;
+  padding: 12px 12px;
+  z-index: 2;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyNHYtMjRsMjAgMTItMjAgMTJ6Ii8+PC9zdmc+);
+  background-repeat: no-repeat !important;
+  background-position: center;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-color: gainsboro;
+  position: fixed;
+  bottom: 4%;
+  right: 3%;
+  border-radius: 40px;
+  background-color: #e35639;
+  color: white;
+  opacity: 0.9;
+  animation: zoom-in-and-out 2s ease infinite;
+}
+/* zoom in and zoom out animation (applied on play button) */
+@keyframes zoom-in-and-out {
+  0% {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+  }
+  50% {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+  }
+  100% {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+  }
+}
+.play {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyNHYtMjRsMjAgMTItMjAgMTJ6Ii8+PC9zdmc+);
+  background-color: chartreuse;
+  color: green;
+}
+.pause {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTAgMjRoLTZ2LTI0aDZ2MjR6bTEwLTI0aC02djI0aDZ2LTI0eiIvPjwvc3ZnPg==) !important;
+}
+
+/**gallery page design*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap");
+.s5 {
+  min-height: 100vh;
+  margin: 0;
+ /* background: #2c104b; /* fallback for old browsers */
+
+  background-size: cover;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+}
+.gallery-header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-header p {
+  font-size: 8vh;
+  letter-spacing: 0.5rem;
+  word-spacing: 1rem;
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: bold;
+  padding: 0 0 50px 0;
+  color: #450656;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #9ca0b1;
+}
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  padding: 0px 10px 0px 10px;
+  width: 30rem;
+  height: 7rem;
+  border-radius: 10%;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper h1 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  background: linear-gradient(to right, #f8413a 10%, #25abe8 50%, #57d75b 60%);
+
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1.5s linear infinite;
+
+  display: inline-block;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* diamond shape */
+.glow {
+  width: fit-content;
+  box-shadow: 5px 5px 0 #1d8758, 0 0 20px 5px #c0ffe4, inset 2px 2px 0 #d3ffec;
+  animation: glow 1s infinite ease;
+}
+.glow:before,
+.glow:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.glow:after {
+  left: 0;
+  width: 4px;
+  height: 48px;
+  background: #fff;
+  z-index: 5;
+  animation: sheen 5s infinite;
+}
+
+/* animates box shadow glow effect */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 1px 1px #1d8758, 0 0 20px 5px #8fffcf, inset 2px 2px #d3ffec;
+  }
+  50% {
+    box-shadow: 1px 1px #1d8758, 0 0 16px 8px #8fffcf, inset 2px 2px #d3ffec;
+  }
+}
+
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+ 
+  .gallery-header p {
+    margin-top: 5px;
+    font-size: 4rem;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  
+  .gallery-header p {
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  
+  .gallery-header p {
+    word-spacing: 0;
+    letter-spacing: 0;
+    position: relative;
+    margin-top: 0px;
+    font-size: 50px;
+  }
+  .wrapper h1 {
+    font-size: 50px;
+  }
+}
+
+/*gallery page design end*/
+
+span {
+  background: #fff !important;
+}
+.fp-slidesNav.fp-bottom {
+  bottom: 17px;
+  margin-left: 1em !important;
+}
+.s6 {
+  position: relative;
+}
+.map-wrapper {
+  padding: 1em 0 1em 0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.map-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+.right-section {
+  width: 50%;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.map-container iframe {
+  width: 80%;
+  height: 350px;
+}
+.map-container h3 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid rgb(155, 45, 45);
+  color: var(--map-text-color);
+  margin: 0.2rem;
+  font-size: 24px;
+  font-family: "Nixie One", cursive;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.left-section div p {
+  font-size: 26px;
+  padding: 1.2rem 0.7rem;
+  text-align: center;
+  color: var(--map-text-color);
+  font-weight: 400;
+  font-family: "Flamenco", cursive;
+  letter-spacing: 1px;
+  line-height: 1.8rem;
+}
+.left-section div h3 {
+  color: var(--map-text-color);
+}
+#second-para {
+  margin-top: -20px;
+}
+.line {
+  color: var(--map-text-color);
+  width: 8em;
+  margin: auto;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  height: 0.2rem;
+}
+#direction-header {
+  position: absolute;
+  top: 5%;
+  text-align: center;
+  text-transform: uppercase;
+  /* font-family: 'Rye', cursive; */
+  font-family: "Cinzel", serif;
+  font-weight: bolder;
+  color: var(--map-text-color);
+  letter-spacing: 3px;
+  font-size: 36px;
+  width: 100%;
+}
+
+/* start of media queries for setting images*/
+
+/* set desktop images here */
+@media only screen {
+  .s1 {
+    background: url("./resources/D/1.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s2 {
+    background: url("./resources/D/2.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  #snd {
+    text-align: left;
+    margin-left: 2em;
+    font-size: 4rem;
+  }
+  .s3 {
+    background: url("./resources/D/3.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s4 {
+    background: url("./resources/D/4.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s5 {
+    background: url("./resources/gallery/D/Gallery.png");
+    background-size: cover;
+    background-color: #3d0b01;
+  }
+  .s6 {
+    background: url("./resources/map/D/map.png");
+    background-size: cover;
+  }
+}
+
+/* set phone images here */
+@media only screen and (max-width: 500px) {
+  .s1 {
+    background: url("./resources/P/1.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s2 {
+    background: url("./resources/P/2.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  #snd {
+    text-align: left;
+    margin-left: 2em;
+    font-size: 4rem;
+  }
+  .s3 {
+    background: url("./resources/P/3.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s4 {
+    background: url("./resources/P/4.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s5 {
+    background: url("./resources/gallery/P/gallery.png");
+    background-size: cover;
+    background-color: #3d0b01;
+  }
+  .s6 {
+    background: url("./resources/map/P/map.png");
+    background-size: cover;
+  }
+  #gallery {
+    margin-bottom: -3px;
+  }
+}
+
+/* set tablet portrait images here */
+@media only screen and (min-device-width: 768px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .s1 {
+    background: url("./resources/TAB_P/1.png");
+
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s2 {
+    background: url("./resources/TAB_P/2.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  #snd {
+    text-align: left;
+    margin-left: 2em;
+    font-size: 4rem;
+  }
+  .s3 {
+    background: url("./resources/TAB_P/3.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s4 {
+    background: url("./resources/TAB_P/4.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  /*gallery*/
+  .s5 {
+    background: url("./resources/gallery/TAB_P/gallery.png");
+    background-size: cover;
+    background-color: #3d0b01;
+  }
+  /*map*/
+  .s6 {
+    background: url("./resources/map/TAB_P/map.png");
+    background-size: cover;
+  }
+}
+
+/* set tablet landscape images here */
+@media only screen and (min-device-width: 768px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .s1 {
+    background: url("./resources/TAB_L/1.png");
+    background-size: cover;
+
+    background-size: 100% 100%;
+  }
+  .s2 {
+    background: url("./resources/TAB_L/2.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  #snd {
+    text-align: left;
+    margin-left: 2em;
+    font-size: 4rem;
+  }
+  .s3 {
+    background: url("./resources/TAB_L/3.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s4 {
+    background: url("./resources/TAB_L/4.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s5 {
+    background: url("./resources/gallery/TAB-L/Gallery.png");
+    background-size: 100% 100%;
+    background-color: #3d0b01;
+  }
+  .s6 {
+    background: url("./resources/map/TAB-L/map.png");
+    background-size: cover;
+  }
+}
+
+/* set desktop images here too*/
+@media only screen and (min-width: 992px) and (orientation: landscape) {
+  .s1 {
+    background: url("./resources/D/1.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s2 {
+    background: url("./resources/D/2.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+
+  #snd {
+    text-align: left;
+    margin-left: 2em;
+    font-size: 4rem;
+  }
+  .s3 {
+    background: url("./resources/D/3.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s4 {
+    background: url("./resources/D/4.png");
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  .s5 {
+    background: url("./resources/gallery/D/Gallery.png");
+    background-size: 100% 100%;
+    background-color: #3d0b01;
+  }
+  .s6 {
+    background: url("./resources/map/D/map.png"); /* change background of map here */
+    background-size: cover;
+  }
+}
+/* end of media queries for setting images */
+
+/* Media queries for responsiveness */
+
+/* for desktop and laptop */
+@media screen and (min-width: 1400px) {
+  .map-container {
+    padding: 0 5rem;
+  }
+  .right-section iframe {
+    width: 100%;
+    height: 50vh;
+  }
+  #direction-header {
+    position: absolute;
+    top: -15%;
+    font-size: 50px;
+    letter-spacing: 0.3em;
+  }
+  .left-section div p {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+}
+
+/* for large size tablets */
+@media screen and (min-width: 1200px) {
+  .map-container {
+    padding: 0 5rem;
+  }
+  .right-section iframe {
+    width: 100%;
+    height: 50vh;
+  }
+  #direction-header {
+    position: absolute;
+    top: -15%;
+    font-size: 60px;
+    letter-spacing: 0.1em;
+  }
+  .left-section div p {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+}
+/* for ipad pro portrait mode  */
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  p {
+    line-height: 2em;
+  }
+  .map-container {
+    flex-direction: column;
+  }
+  .map-container > div {
+    width: 100%;
+  }
+  .background-style {
+    padding: 2.5rem;
+  }
+  .right-section iframe {
+    height: 40vh;
+    width: 85%;
+  }
+  .right-section {
+    margin-top: 4rem;
+    margin-bottom: -4rem;
+  }
+  #direction-header {
+    top: -3%;
+    font-size: 70px;
+  }
+  .background-style div h3 {
+    font-size: 36px;
+  }
+  .background-style div p {
+    font-size: 40px;
+    line-height: 1.5em;
+  }
+}
+/* for ipad landscape mode */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .map-container {
+    padding: 0 3rem;
+  }
+  .right-section iframe {
+    width: 100%;
+  }
+  #direction-header {
+    position: absolute;
+    top: -10%;
+    font-size: 65px;
+    letter-spacing: 0.1em;
+  }
+  .background-style {
+    padding: 1rem 0;
+  }
+  .left-section div p {
+    font-size: 1.3rem;
+    line-height: 3rem;
+  }
+}
+
+/* for ipad portrait mode */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0;
+  }
+  #direction-header {
+    position: absolute;
+    top: -5%;
+  }
+  .left-section {
+    width: 100%;
+  }
+  .right-section {
+    width: 100%;
+    margin-top: 0;
+  }
+  .left-section div p {
+    font-size: 26px;
+  }
+  .background-style div p {
+    font-size: 26px;
+  }
+  .map-container iframe {
+    width: 80%;
+    height: 40vh;
+  }
+  .background-style {
+    margin-bottom: 3.5rem;
+    padding: 1rem;
+    width: 70%;
+  }
+}
+
+/* for smartphones */
+@media screen and (max-width: 480px) {
+  .map-container {
+    padding: 0;
+    height: 80vh;
+  }
+  #direction-header {
+    top: 3%;
+  }
+  .background-style {
+    margin: 0;
+    padding: 0;
+    width: 95%;
+  }
+  .background-style div h3 {
+    font-size: 20px;
+  }
+  .left-section div p {
+    font-size: 16px;
+  }
+  .left-section {
+    height: 30vh;
+  }
+  .right-section iframe {
+    height: 42vh;
+    width: 100%;
+  }
+  .right-section {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 12%;
+  }
+  .left-section {
+    margin-top: 0;
+    position: absolute;
+    top: 12%;
+  }
+  #direction-header {
+    font-size: 40px;
+  }
+  .background-style div h3 {
+    font-size: 20px;
+    padding: 0.3rem;
+  }
+  .background-style div p {
+    margin: 0;
+    padding: 1rem;
+  }
+}
+/* for smartphone (iphone 4,5,SE..) */
+@media screen and (max-width: 350px) {
+  #direction-header {
+    top: 5%;
+  }
+  #direction-header {
+    font-size: 28px;
+  }
+  .background-style div h3 {
+    font-size: 16px;
+  }
+  .background-style div p {
+    font-size: 14px;
+  }
+  .left-section div p {
+    line-height: 1.3rem;
+  }
+  .background-style {
+    padding: 0;
+  }
+  .background-style {
+    padding: 0;
+    margin: 0;
+  }
+  .left-section {
+    top: 15%;
+  }
+  .background-style div h3 {
+    font-size: 20px;
+    padding: 0.3rem;
+  }
+  .background-style div p {
+    margin: 0;
+    padding: 1rem;
+  }
+  .right-section iframe {
+    height: 42vh;
+    width: 100%;
+  }
+  .right-section {
+    padding-bottom: 2em;
+  }
+}
+
+/* for phone landscape mode */
+@media screen and (max-width: 992px) and (orientation: landscape) {
+  .map-container {
+    padding: 0 3rem;
+  }
+  .right-section iframe {
+    width: 100%;
+  }
+  #direction-header {
+    position: absolute;
+    top: 2%;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+  }
+  .background-style {
+    padding: 1rem 0;
+  }
+  .left-section div p {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+
+  .right-section iframe {
+    height: 50vh;
+  }
+}
+/*end of media queries */
+
+/* footer styling */
+
+.s7 {
+  background-color: #800051;
+  padding: 1rem 0;
+}
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons-container > div a i {
+  font-size: 24px;
+  padding: 0.5rem 1.2rem;
+  color: #ffffff;
+}
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-text > div h6 {
+  font-size: 18px;
+  font-family: "Scheherazade New", serif;
+  color: #ffffff;
+  font-weight: 100;
+}
